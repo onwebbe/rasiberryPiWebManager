@@ -64,6 +64,9 @@ class GPIOPin:
         self.__pinMode = pinMode
         self.__pinID = pinID
 
+    def getPinID(self):
+        return self.__pinID
+        
     def getJSONObj(self):
         jsonObj = {"value": self.__pinValue, "mode": self.__pinMode, "names": self.__pinNames}
         return jsonObj
