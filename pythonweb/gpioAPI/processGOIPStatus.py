@@ -87,7 +87,7 @@ def createGPIOOverallObject(pinOverall):
                 pinMode = pinDataItem.value
             else:
                 pinNames[pinTitle] = pinDataItem.value
-        pinObj = GOIPStatus.GPIOPin((int)pinDataItem.id, pinMode, pinValue, pinNames)
+        pinObj = GOIPStatus.GPIOPin(int(pinDataItem.id), pinMode, pinValue, pinNames)
         pinList.append(pinObj)
     return pinList
 

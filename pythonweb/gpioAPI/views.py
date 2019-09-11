@@ -23,7 +23,7 @@ def gpio_overview(request):
 def gpio_setPinStatus(request):
     GPIO.setmode(GPIO.BOARD)
 
-    boardID = (int)request.GET.get('boardID')
+    boardID = int(request.GET.get('boardID'))
     pinList = getGOIPStatusData()
     if (boardID == None):
         return HttpResponse(json.dumps({"success": False, "msg": "Board ID is mandatory"}, indent=4))
