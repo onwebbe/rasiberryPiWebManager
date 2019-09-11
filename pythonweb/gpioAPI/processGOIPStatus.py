@@ -1,6 +1,6 @@
 
-fopen = open('/myProject/python/rasiberryPiWebManager/gpioAPI/sampleGOIP.txt','r')
-lines = fopen.readlines()
+# fopen = open('/myProject/python/rasiberryPiWebManager/gpioAPI/sampleGOIP.txt','r')
+# lines = fopen.readlines()
 import json
 from . import GOIPStatus
 
@@ -92,8 +92,8 @@ def createGPIOOverallObject(pinOverall):
     return pinList
 
 def parseGOIPStatusData(lineArray):
-    if (lineArray == None):
-        lineArray = lines
+    # if (lineArray == None):
+    #     lineArray = lines
     i = 0
     headList = None
     dataList = []

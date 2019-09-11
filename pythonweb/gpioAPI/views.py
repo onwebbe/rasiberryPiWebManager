@@ -9,9 +9,9 @@ from .MyEncoder import MyEncoder
 
 def gpio_overview(request):
     # print(GPIO.RPI_INFO)
-    output = os.popen('cat /proc/cpuinfo')
-    print(output.read())
-    dataList = processGOIPStatus.parseGOIPStatusData(None)
+    output = os.popen('gpio readall')
+    gpioStatusString = output.read()
+    dataList = processGOIPStatus.parseGOIPStatusData(gpioStatusString)
     return HttpResponse(json.dumps(dataList, cls=MyEncoder, indent=4))
 
 def gpio_setPinStatus(request):
