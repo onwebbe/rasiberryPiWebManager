@@ -18,7 +18,7 @@ from django.urls import path, include
 from . import views
 urlpatterns = [
     path(r'overall/', views.gpio_overview),
-    path(r'pinStatus/', views.gpio_setPinStatus)
+    path(r'setPinStatus/', views.gpio_setPinStatus)
 ]
 
 
