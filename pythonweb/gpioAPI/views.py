@@ -45,7 +45,7 @@ def gpio_setPinStatus(request):
         return HttpResponse(json.dumps({"success": False, "msg": "Direction should be IN or OUT only"}, indent=4))
 
     value = request.GET.get('value')
-    if (value != 'HIGH' or value != 'LOW'):
+    if (value != 'HIGH' and value != 'LOW'):
         return HttpResponse(json.dumps({"success": False, "msg": "Value should be 'HIGH' or 'LOW' only"}, indent=4))
     else:
         if (value == 'HIGH'):
