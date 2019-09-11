@@ -20,5 +20,3 @@ urlpatterns = [
     path(r'overall/', views.gpio_overview),
     path(r'setPinStatus/', views.gpio_setPinStatus)
 ]
-
-
