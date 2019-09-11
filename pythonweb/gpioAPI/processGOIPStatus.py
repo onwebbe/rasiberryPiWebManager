@@ -91,13 +91,14 @@ def createGPIOOverallObject(pinOverall):
         pinList.append(pinObj)
     return pinList
 
-def parseGOIPStatusData(lineArray):
+def parseGOIPStatusData(inputString):
     # if (lineArray == None):
     #     lineArray = lines
     i = 0
     headList = None
     dataList = []
     headerIndCount = 0
+    lineArray = inputString.splitlines()
     for line in lineArray:
         if (i == 1):
             headList = processHeadData(line)
