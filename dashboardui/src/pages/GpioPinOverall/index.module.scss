@@ -1,0 +1,36 @@
+.pinDiagram {
+    display: flex;
+    flex-flow: row wrap;
+    width: 260px;
+    display: flex;
+    justify-content: center;
+    > div {
+        width: 125px;
+        padding: 8px;
+        text-align: center;
+    }
+}
+.pinDiagramOverall {
+    margin:'auto';
+    display:'flex';
+    justify-content: 'center'
+}
+.pinIcon {
+    border: 1px solid white;
+    height: 20px;
+    width: 20px;
+    margin: auto;
+}
+.in {
+    background-color: red;
+}
+.out {
+    background-color: green;
+}
+.vt {
+    background-color: grey;
+}
+.pinTitle {
+    color: white;
+    margin-bottom: 5px;
+}
