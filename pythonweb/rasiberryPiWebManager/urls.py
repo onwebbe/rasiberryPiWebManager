@@ -19,5 +19,5 @@ from django.conf.urls import url
 from . import views
 urlpatterns = [
     path(r'admin/', admin.site.urls),
-    path(r'gpio/', include('gpioAPI.urls')),
+    path(r'api/v1/gpio/', include('gpioAPI.urls')),
 ]
