@@ -1,7 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
 const createThemeColorReplacerPlugin = require('./config/plugin.config')
-const baseUrl = process.env.NODE_ENV === 'production' ? '/piManager/' : '/';
 
 function resolve (dir) {
   return path.join(__dirname, dir)
@@ -12,7 +11,7 @@ function resolve (dir) {
  * @returns {boolean}
  */
 function isProd () {
-  return process.env.NODE_ENV === 'production' || process.env.VUE_APP_PREVIEW === 'true'
+  return process.env.NODE_ENV === 'production'
 }
 
 const assetsCDN = {
@@ -36,7 +35,7 @@ const prodExternals = {
 
 // vue.config.js
 const vueConfig = {
-  publicPath: baseUrl,
+  publicPath: '/',
   configureWebpack: {
     // webpack plugins
     plugins: [
@@ -113,7 +112,8 @@ const vueConfig = {
 }
 
 // preview.pro.loacg.com only do not use in your production;
-if (!isProd()) {
+if (process.env.VUE_APP_PREVIEW === 'true') {
+  console.log('VUE_APP_PREVIEW', true)
   // add `ThemeColorReplacer` plugin to webpack plugins
   vueConfig.configureWebpack.plugins.push(createThemeColorReplacerPlugin())
 }
