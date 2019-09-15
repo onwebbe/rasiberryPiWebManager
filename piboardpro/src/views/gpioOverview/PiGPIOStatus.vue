@@ -51,7 +51,12 @@ export default {
     fetchOveriewData: function () {
       gpioOverview({})
       .then(res => {
+        // this.$set('pinList', res);
         this.pinList = res;
+        if (this.selectedGPIOPin.names != null) {
+          let selectedPinID = this.selectedGPIOPin.names.Physical;
+          this.selectedGPIOPin = this._findPinById(selectedPinID);
+        }
         this.loading = false;
       })
       .catch(() => {
@@ -110,6 +115,11 @@ export default {
 </script>
 
 <style scoped lang="less">
+.PIGPIOStatus {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .PIGPIOStatusInner {
   display: flex;
   flex-flow: row nowrap;

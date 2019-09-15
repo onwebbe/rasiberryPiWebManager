@@ -45,7 +45,7 @@ export default {
       if (this.pinData.mode !== 'IN' && this.pinData.mode !== 'OUT') {
         return '';
       }
-      if (this.pinData.value === 0) {
+      if (this.pinData.value == 0) {
           return {
             'low': true
           };
