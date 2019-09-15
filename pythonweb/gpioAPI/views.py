@@ -47,6 +47,8 @@ def gpio_setPinStatus(request):
     value = request.GET.get('value')
     if (value != 'HIGH' and value != 'LOW'):
         return HttpResponse(json.dumps({"success": False, "msg": "Value should be 'HIGH' or 'LOW' only"}, indent=4))
+    elif (direction == 'IN'): # in will not set value
+        return HttpResponse(json.dumps({"success": False, "msg": "Board ID %s is not valid" %(boardID)}, indent=4))
     else:
         if (value == 'HIGH'):
             GPIO.output(boardID, GPIO.HIGH)
