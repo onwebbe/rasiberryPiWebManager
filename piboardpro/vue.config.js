@@ -1,6 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const createThemeColorReplacerPlugin = require('./config/plugin.config')
+const baseUrl = process.env.NODE_ENV === 'production' ? '/piManager/' : '/';
 
 function resolve (dir) {
   return path.join(__dirname, dir)
@@ -35,6 +36,7 @@ const prodExternals = {
 
 // vue.config.js
 const vueConfig = {
+  publicPath: baseUrl,
   configureWebpack: {
     // webpack plugins
     plugins: [
