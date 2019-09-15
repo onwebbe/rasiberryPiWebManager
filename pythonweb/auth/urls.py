@@ -23,5 +23,5 @@ from django.conf import settings
 STATIC_URL = '/static/'
 
 urlpatterns = [
-    path(r'login/', views.login)
+    path(r'login', views.login)
 ]
