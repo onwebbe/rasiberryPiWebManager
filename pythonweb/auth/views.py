@@ -1,10 +1,11 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 import json
 
 # Create your views here.
 def login(self):
   loginData = {
-    'id': 'admin',
+    'id': "4291d7da9005377ec9aec4a71ea837f",
     'name': 'onwebbe',
     'username': 'admin',
     'password': '',
@@ -20,4 +21,4 @@ def login(self):
     'lang': 'zh-CN',
     'token': '4291d7da9005377ec9aec4a71ea837f'
   }
-  return json.dumps(loginData, indent=4)
+  return HttpResponse(json.dumps(loginData, indent=4))
