@@ -25,5 +25,5 @@ STATIC_URL = '/static/'
 urlpatterns = [
     path(r'admin/', admin.site.urls),
     path(r'api/v1/gpio/', include('gpioAPI.urls')),
-    path(r'api/v1/gpio/', include('auth.urls')),
+    path(r'api/auth/', include('auth.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
