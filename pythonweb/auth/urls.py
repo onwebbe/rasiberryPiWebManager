@@ -24,3 +24,4 @@ STATIC_URL = '/static/'
 
 urlpatterns = [
     path(r'login/', views.login)
+]
