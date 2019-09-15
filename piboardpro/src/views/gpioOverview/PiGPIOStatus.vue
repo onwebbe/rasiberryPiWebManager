@@ -22,6 +22,7 @@
 </template>
 
 <script>
+import { gpioOverview } from '@/api/gpio'
 import { mixinDevice } from '@/utils/mixin'
 import { GPIOPin, GPIODetail } from '@/components'
 import { Modal } from 'ant-design-vue';
@@ -42,9 +43,16 @@ export default {
     }
   },
   created () {
-    setTimeout(() => {
-      this.loading = !this.loading
-    }, 1000)
+    let that = this;
+    gpioOverview({})
+      .then(res => {
+        res.result;
+        console.log(this);
+        that.loading = false;
+      })
+      .catch(() => {
+        that.loading = false;
+      })
   },
   methods: {
      onClickPin: function (pinData) {

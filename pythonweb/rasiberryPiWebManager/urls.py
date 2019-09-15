@@ -25,5 +25,4 @@ STATIC_URL = '/static/'
 urlpatterns = [
     path(r'admin/', admin.site.urls),
     path(r'api/v1/gpio/', include('gpioAPI.urls')),
-    static(settings.STATIC_URL, document_root = settings.STATIC_ROOT )
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
