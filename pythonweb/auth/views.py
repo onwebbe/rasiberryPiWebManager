@@ -3,7 +3,7 @@ from django.http import HttpResponse
 import json
 
 # Create your views here.
-def login(self):
+def login(request):
   loginData = {
     'id': "4291d7da9005377ec9aec4a71ea837f",
     'name': 'onwebbe',
@@ -22,3 +22,7 @@ def login(self):
     'token': '4291d7da9005377ec9aec4a71ea837f'
   }
   return HttpResponse(json.dumps(loginData, indent=4))
+
+def step2code(request):
+  stepData = {"stepCode": 1}
+  return HttpResponse(json.dumps(stepData, indent=4))
