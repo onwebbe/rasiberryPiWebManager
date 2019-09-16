@@ -23,8 +23,6 @@ from django.conf import settings
 STATIC_URL = '/static/'
 
 urlpatterns = [
-    path(r'admin/', admin.site.urls),
-    path(r'api/v1/gpio/', include('gpioAPI.urls')),
-    path(r'api/auth/', include('auth.urls')),
-    path(r'api/user/', include('user.urls')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+  path(r'info', views.info),
+  path(r'nav', views.nav),
+]

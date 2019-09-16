@@ -1,7 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const createThemeColorReplacerPlugin = require('./config/plugin.config')
-
+var baseURL = isProd() ? '/piManager/' : '/';
 function resolve (dir) {
   return path.join(__dirname, dir)
 }
@@ -97,7 +97,7 @@ const vueConfig = {
     // If you want to turn on the proxy, please remove the mockjs /src/main.jsL11
     proxy: {
       '/api': {
-        target: 'http://192.168.0.102:8000',
+        target: 'http://localhost:8100',
         ws: false,
         changeOrigin: true
       }
