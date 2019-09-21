@@ -38,6 +38,12 @@ export const asyncRouterMap = [
             name: 'gpioOverview',
             component: () => import('@/views/gpioOverview/PiGPIOStatus'),
             meta: { title: 'PiGPIOStatus', keepAlive: true, permission: [ 'pioverview' ] }
+          },
+          {
+            path: '/pioverview/workingOverview',
+            name: 'gpioOverview',
+            component: () => import('@/views/gpioOverview/PiWorkingStatus'),
+            meta: { title: 'PiWorkingStatus', keepAlive: true, permission: [ 'pioverview' ] }
           }
         ]
       },

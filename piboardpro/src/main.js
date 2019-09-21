@@ -15,8 +15,11 @@ import './core/use'
 import './permission' // permission control
 import './utils/filter' // global filter
 import i18n from './locales'
+import echarts from 'echarts'
 
 Vue.config.productionTip = false
+
+Vue.prototype.$echarts = echarts
 
 // mount axios Vue.$http and this.$http
 Vue.use(VueAxios)

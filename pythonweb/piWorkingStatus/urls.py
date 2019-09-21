@@ -23,9 +23,8 @@ from django.conf import settings
 STATIC_URL = '/static/'
 
 urlpatterns = [
-    path(r'admin/', admin.site.urls),
-    path(r'api/v1/gpio/', include('gpioAPI.urls')),
-    path(r'api/auth/', include('auth.urls')),
-    path(r'api/user/', include('user.urls')),
-    path(r'api/v1/piWorkingStatus/', include('piWorkingStatus.urls')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+  path(r'getPiUsage', views.piStatus),
+  path(r'getPiRunningStatus', views.getPiRunningStatusData),
+  path(r'killProcess', views.killProcess),
+  path(r'getDiskInformation', views.getDiskInformation),
+]

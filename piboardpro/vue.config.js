@@ -35,7 +35,7 @@ const prodExternals = {
 
 // vue.config.js
 const vueConfig = {
-  publicPath: '/',
+  publicPath: baseURL,
   configureWebpack: {
     // webpack plugins
     plugins: [

@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "target": "es6",
-    "baseUrl": ".", 
-    //"baseUrl": "./piManager/",
+    // "baseUrl": ".", 
+    "baseUrl": "./piManager/",
     "paths": {
       "@/*": ["src/*"]
     }

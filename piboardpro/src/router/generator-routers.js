@@ -20,6 +20,7 @@ const constantRouterComponents = {
 
   // pi overview
   'PiGPIOStatus': () => import('@/views/gpioOverview/PiGPIOStatus'),
+  'PiWorkingStatus': () => import('@/views/gpioOverview/PiWorkingStatus'),
   // form
   'BasicForm': () => import('@/views/form/BasicForm'),
   'StepForm': () => import('@/views/form/stepForm/StepForm'),

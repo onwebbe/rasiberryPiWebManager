@@ -480,6 +480,15 @@ def nav(request):
       },
       'component': 'PiGPIOStatus'
     },
+    {
+      'name': 'workingOverview',
+      'parentId': 100,
+      'id': 7,
+      'meta': {
+        'title': 'Woring Overview'
+      },
+      'component': 'PiWorkingStatus'
+    },
     # // form
     {
       'name': 'form',
