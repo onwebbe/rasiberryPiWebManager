@@ -7,7 +7,7 @@ import psutil
 import sys
 import os
 def killProcess(request):
-  PID = request.GET.get('PID')
+  PID = int(request.GET.get('PID'))
   try:
     psObject = psutil.Process(PID)
     psObject.terminate()

@@ -27,7 +27,7 @@
       </span>
       <span slot="action" slot-scope="text, record">
         <template>
-          <a @click="handleEdit(record)">杀死</a>
+          <a @click="handleKill(record)">杀死</a>
           <a-divider type="vertical" />
         </template>
       </span>
@@ -38,7 +38,7 @@
 <script>
 import moment from 'moment'
 import { STable } from '@/components'
-import { getPiRunningStatus } from '@/api/piWorkingStatus'
+import { getPiRunningStatus, killProcess } from '@/api/piWorkingStatus'
 
 export default {
   name: 'PiProcessList',
@@ -149,9 +149,9 @@ export default {
       }
     },
 
-    handleEdit (record) {
+    handleKill (record) {
       console.log(record);
-      getPiRunningStatus({PID: record.PID})
+      killProcess({pid: record.PID})
       .then(res => {
         return (res.result);
         this.loading = false;
